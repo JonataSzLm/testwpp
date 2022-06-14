@@ -1,6 +1,6 @@
 body {
-	height: 730px;
-	width: 100%;
+	height: 100vh;
+	width: 100vw;
 	margin: 0;
 	display: flex;
 	flex-direction: row;
@@ -8,16 +8,19 @@ body {
 	align-items: center;
 	border: none;
 	font-family: "Segoe UI";
-	background-color: #f8f9fa;
+	background-image: url('img/fundo.gif');
 }
 .container {
-	width: 50%;
+	width: 40%;
+	height: 60%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #fefefe;
-	padding: 100px;
+	padding: 0;
+	margin: 0;
+	background-color: rgba(250, 250, 250, 0.8);
+	border-radius: 25px;
 }
 .titulo {
 	font-size: 35px;
@@ -45,13 +48,12 @@ body {
 #numero {
 	width: 250px;
 }
-.btn_div {
-	justify-content: center;
+
+.formulario {
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width: 100%;
-	height: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 #botao {
 	font-weight: bold;
@@ -68,4 +70,13 @@ body {
 	background-color: white;
 	color: #01e675;
 	border: solid 2px #01e675;
+}
+.icone {
+	width: 50px;
+	height: 50px;
+}
+.radio {
+	border-color: red;
+	background-color: red;
+	color: red;
 }

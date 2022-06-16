@@ -1,3 +1,9 @@
+:root {
+	--color_bk: white;
+	--color_main: #00a884;
+	--color_bk2: rgba(255, 255, 255, 0.9)
+}
+
 body {
 	height: 100vh;
 	width: 100vw;
@@ -11,17 +17,58 @@ body {
 	background-image: url('img/fundo.gif');
 }
 .container {
-	width: 40%;
-	height: 60%;
+	width: 70%;
+	height: 75%;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	flex-direction: row;
+	justify-content: space-between;
 	align-items: center;
 	padding: 0;
 	margin: 0;
-	background-color: rgba(250, 250, 250, 0.8);
-	border-radius: 25px;
 }
+
+.send, .history {
+	width: 49.5%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--color_bk2);
+}
+
+.send {
+	border-radius: 25px 0 0 25px;
+	justify-content: center;
+}
+
+.history {
+	justify-content: flex-start;
+	border-radius: 0 25px 25px 0;
+	overflow: auto;
+}
+
+.contato {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+	border-bottom: 1px rgba(160, 158, 158, 0.886) solid;
+}
+
+#nomeh, #numeroh {
+	margin: 0;
+	padding: 0;
+}
+
+
+.lixo {
+	height: 45px;
+	margin: 5px;
+}
+
 .titulo {
 	font-size: 35px;
 	font-weight: 400px;
@@ -29,12 +76,18 @@ body {
 	color: #232323
 	style: normal;
 }
+.titulo2 {
+	font-size: 30px;
+}
 .caixa {
-	height: 50px;
-	font-size: 35px;
+	height: 45px;
+	font-size: 30px;
 	margin: 10px 3px;
 	border-radius: 5px;
 	border: 2px solid rgb(150,150,150);
+}
+#nome {
+	width: 450px;
 }
 #phone {
 	display: none;
@@ -60,16 +113,16 @@ body {
 	height: 50px;
 	font-size: 13px;
 	margin-top: 30px;
-	background-color: #01e675;
+	background-color: var(--color_main);
 	border: none;
-	color: white;
+	color: var(--color_bk);
 	padding: 10px 20px;
 	border-radius: 5px;
 }
 #botao:hover {
 	background-color: white;
-	color: #01e675;
-	border: solid 2px #01e675;
+	color: var(--color_main);
+	border: solid 2px var(--color_main);
 }
 .icone {
 	width: 50px;

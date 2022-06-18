@@ -9,7 +9,7 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 </head>
-<body onload="pegaContatos()">
+<body onload="carregaContatos()">
 	<div class="container">
 		<div class="send">
 			<img src="img/icone.svg" class="icone">

@@ -33,17 +33,17 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: var(--color_bk2);
+	background-color: var(--color_bk);
 }
 
 .send {
-	border-radius: 25px 0 0 25px;
+	/*border-radius: 25px 0 0 25px;*/
 	justify-content: center;
 }
 
 .history {
 	justify-content: flex-start;
-	border-radius: 0 25px 25px 0;
+	/*border-radius: 0 25px 25px 0;*/
 	overflow: auto;
 }
 
@@ -56,6 +56,7 @@ body {
 	align-items: center;
 	margin-bottom: 10px;
 	border-bottom: 1px rgba(160, 158, 158, 0.886) solid;
+	padding: 5px;
 }
 
 #nomeh, #numeroh {
@@ -63,7 +64,8 @@ body {
 	padding: 0;
 }
 .contato:hover {
-	background-color: rgba(255, 255, 255, 0.525);
+	background-color: rgba(32, 102, 164, 0.362);
+	border: 1px solid rgba(32, 103, 164, 0.696);
 }
 .dados {
 	width: 94%;

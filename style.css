@@ -37,14 +37,14 @@ body {
 
 .send {
 	display: flex;
-	/*border-radius: 25px 0 0 25px;*/
+	border-radius: 6px 0 0 6px;
 	justify-content: center;
 }
 
 .history {
 	justify-content: flex-start;
 	display: none;
-	/*border-radius: 0 25px 25px 0;*/
+	border-radius: 0 6px 6px 0;
 	overflow: auto;
 }
 .show_history {

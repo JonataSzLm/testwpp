@@ -52,6 +52,7 @@ function carregaContatos() {
 	let history = document.getElementById('history')
 	var tamanho = localStorage.length
 	if (tamanho > 0) {
+		history.classList.toggle('show_history')
 		history.innerHTML = '<p class="titulo">Historico:</p>'
 		for (let i = tamanho; i >= 1; i--) {
 			contatos[i] = localStorage.getItem(i)
@@ -70,8 +71,6 @@ function carregaContatos() {
 				'<img src="img/lixeira.svg" class="lixo" onclick="excluiContato(' + i + ')">' +
 			'</div>'
 		}
-	} else {
-		history.innerHTML = '<p class="titulo2">Ainda não há registros de contatos</p>'
 	}
 }
 

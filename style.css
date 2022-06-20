@@ -21,7 +21,7 @@ body {
 	height: 75%;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	padding: 0;
 	margin: 0;
@@ -30,21 +30,26 @@ body {
 .send, .history {
 	width: 49.5%;
 	height: 100%;
-	display: flex;
 	flex-direction: column;
 	align-items: center;
 	background-color: var(--color_bk);
 }
 
 .send {
+	display: flex;
 	/*border-radius: 25px 0 0 25px;*/
 	justify-content: center;
 }
 
 .history {
 	justify-content: flex-start;
+	display: none;
 	/*border-radius: 0 25px 25px 0;*/
 	overflow: auto;
+}
+.show_history {
+	display: flex;
+	margin-left: 1%;
 }
 
 .contato {

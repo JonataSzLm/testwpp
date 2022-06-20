@@ -1,13 +1,15 @@
-let url_web = 'https://web.whatsapp.com/send?phone="';
-let url_pc = 'https://api.whatsapp.com/send?phone="';
+let url_web = 'https://web.whatsapp.com/send?phone="'
+let url_pc = 'https://api.whatsapp.com/send?phone="'
 var contatos = []
+var existe = false
 
 function enviarNumero() {
-	let nome = document.getElementById('nome');
-	let prefixo = document.getElementById('prefixo');
-	let ddd = document.getElementById('ddd');
-	let numero = document.getElementById('numero');
-	let radio = document.getElementsByName('whatsapp');
+	let nome = document.getElementById('nome')
+	let prefixo = document.getElementById('prefixo')
+	let ddd = document.getElementById('ddd')
+	let numero = document.getElementById('numero')
+	let radio = document.getElementsByName('whatsapp')
+	var tamanho = localStorage.length
 
 
 	for (var i = 0; i < radio.length; i++) {
@@ -22,20 +24,36 @@ function enviarNumero() {
 		var url = url_pc;
 	}
 
-	var telefone = prefixo.value + ddd.value + numero.value;
+	var telefone = prefixo.value + ddd.value + numero.value
 	url += telefone + '"';
 
-	gravaContato(nome.value, telefone)
+	for (let i = 1; i <= tamanho; i++) {
+		var tamCtt = contatos[i].length
+		var divCtt = contatos[i].indexOf('|')
+		var telCtt = contatos[i].slice(divCtt+1, tamCtt)
+		
+		if (telefone == telCtt) {
+			var indice = i
+			existe = true
+			break
+		}
+	}
+
+	if (existe) {
+		gravaContato(nome.value, telefone, indice)
+	} else {
+		gravaContato(nome.value, telefone, false)
+	}
 
 	window.open(url, '_blank');
 }
 
 function carregaContatos() {
-	let history = document.getElementById('history');
+	let history = document.getElementById('history')
 	var tamanho = localStorage.length
 	if (tamanho > 0) {
-		history.innerHTML = '<p class="titulo">Historico:</p>';
-		for (let i = 1; i <= tamanho; i++) {
+		history.innerHTML = '<p class="titulo">Historico:</p>'
+		for (let i = tamanho; i >= 1; i--) {
 			contatos[i] = localStorage.getItem(i)
 			var temp = localStorage.getItem(i)
 			var divisor = temp.indexOf('|')
@@ -50,10 +68,10 @@ function carregaContatos() {
 					'<p class="subtitulo" id="numeroh">' + prefixo + ' (' + ddd + ') ' + numero + '</p>' +
 				'</div>' +
 				'<img src="img/lixeira.svg" class="lixo" onclick="excluiContato(' + i + ')">' +
-			'</div>';
+			'</div>'
 		}
 	} else {
-		history.innerHTML = '<p class="titulo2">Ainda não há registros de contatos</p>';
+		history.innerHTML = '<p class="titulo2">Ainda não há registros de contatos</p>'
 	}
 }
 
@@ -70,10 +88,10 @@ function excluiContato(num) {
 }
 
 function addContato(num) {
-	let nome = document.getElementById('nome');
-	let prefixo = document.getElementById('prefixo');
-	let ddd = document.getElementById('ddd');
-	let numero = document.getElementById('numero');
+	let nome = document.getElementById('nome')
+	let prefixo = document.getElementById('prefixo')
+	let ddd = document.getElementById('ddd')
+	let numero = document.getElementById('numero')
 	var divisor = contatos[num].indexOf('|')
 	var tamTemp = contatos[num].length
 	nome.value = contatos[num].slice(0, divisor) //pega o nome
@@ -82,8 +100,12 @@ function addContato(num) {
 	numero.value = contatos[num].slice(divisor+6, tamTemp)
 }
 
-function gravaContato(nome, telefone) {
+function gravaContato(nome, telefone, indice) {
 	var tam = localStorage.length;
 	var cont = nome + '|' + telefone
-	localStorage.setItem(tam + 1, cont);
+	if (indice) {
+		localStorage.setItem(indice, cont)
+	} else {
+		localStorage.setItem(tam + 1, cont)
+	}
 }

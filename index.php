@@ -22,7 +22,7 @@
 					<label for="PCWhatsapp">Whatsapp para computador</label>
 				</div>
 				<input type="text" name="nome" id="nome" class="caixa" placeholder="Nome do contato" required>
-				<div>
+				<div class="phone">
 					<input type="text" name="prefixo" id="prefixo" value="+55" class="caixa" required>
 					<input type="number" name="ddd" id="ddd" min="0" max="100" value="37"
 				class="caixa" required>

@@ -91,24 +91,31 @@ body {
 .caixa {
 	height: 45px;
 	font-size: 30px;
-	margin: 10px 3px;
 	border-radius: 5px;
-	border: 2px solid rgb(150,150,150);
+	border: 2px solid var(--color_main);
+}
+.phone {
+	width: 81%;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
 }
 #nome {
-	width: 450px;
-}
-#phone {
-	display: none;
+	width: 80%;
+	margin: 10px 0;
 }
 #prefixo {
-	width: 80px;
+	width: 15%;
 }
 #ddd {
-	width: 85px;
+	width: 15%;
 }
 #numero {
-	width: 250px;
+	width: 60%;
 }
 
 .formulario {

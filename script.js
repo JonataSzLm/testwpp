@@ -171,7 +171,7 @@ function buscarContato() {
 function download(filename, textInput) {
 
 	var element = document.createElement('a');
-	element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
+	element.setAttribute('href','data:text/plain;charset=utf-8,' + encodeURIComponent(textInput));
 	element.setAttribute('download', filename);
 	document.body.appendChild(element);
 	element.click();
@@ -183,6 +183,8 @@ function exportarContatos() {
 	for (let i = 1; i < contatos.length; i++) {
 		if (i == 1) {
 			var text = contatos[i] + '\n'
+		} else if (i == contatos.length-1) {
+			text += contatos[i]
 		} else {
 			text += contatos[i] + '\n'
 		}
@@ -191,6 +193,33 @@ function exportarContatos() {
 	download(filename, text)
 }
 
-//fazer funções de importação e exportação de historico
-//https://www.delftstack.com/pt/howto/javascript/read-text-file-in-javascript/
-//https://www.delftstack.com/pt/howto/javascript/javascript-download/
+async function loadFile(file) {
+	let text = await file.text()
+	let output = text.split('\n')
+	var repetido = false
+	var indice = false
+	output.forEach(function(linha) {
+		var div = linha.indexOf('|')
+		var tam = linha.length
+		var nome  = linha.slice(0, div)
+		var numero = linha.slice(div + 1, tam)
+
+		contatos.forEach(function(ctt, index) {
+			var divCtt = ctt.indexOf('|')
+			var telCtt = ctt.slice(divCtt + 1, ctt.length)
+			if (numero == telCtt) {
+				repetido = true
+				indice = index
+			}
+		});
+
+		if (repetido) {
+			gravaContato(nome, numero, indice)
+		} else {
+			gravaContato(nome, numero, false)
+		}
+	});
+	document.location.reload(true)
+  }
+
+  //fazer modal para importação

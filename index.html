@@ -19,7 +19,7 @@
 					<input type="radio" name="whatsapp" id="WebWhatsapp" value="web" class="radio" checked>
 					<label for="WebWhatsapp">Whatsapp Web</label>
 					<input type="radio" name="whatsapp" id="PCWhatsapp" value="pc" class="radio">
-					<label for="PCWhatsapp">Whatsapp para computador</label>
+					<label for="PCWhatsapp">Whatsapp App</label>
 				</div>
 				<input type="text" name="nome" id="nome" class="caixa" placeholder="Nome do contato" required>
 				<div class="phone">
@@ -33,6 +33,7 @@
 			</form>
 		</div>
 		<div class="history" id="history"></div>
+		<input type="file" onchange="loadFile(this.files[0])">
 	</div>
 </body>
 </html>

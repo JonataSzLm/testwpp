@@ -37,14 +37,14 @@ body {
 
 .send {
 	display: flex;
-	border-radius: 6px 0 0 6px;
+	border-radius: 10px 0 0 10px;
 	justify-content: center;
 }
 
 .history {
 	justify-content: flex-start;
 	display: none;
-	border-radius: 0 6px 6px 0;
+	border-radius: 0 10px 10px 0;
 	overflow: auto;
 }
 .history::-webkit-scrollbar { 
@@ -79,7 +79,7 @@ body {
 	width: 94%;
 }
 .lixo {
-	width: 6%;
+	width: 5%;
 	margin: 5px;
 }
 .lixo:hover {
@@ -157,3 +157,159 @@ body {
 	background-color: red;
 	color: red;
 }
+
+.config {
+	display: none;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	width: 90%;
+	height: auto;
+}
+.show_config {
+	display: flex;
+	margin-bottom: 10px;
+}
+
+.src {
+	height: auto;
+	width: 100%;
+	margin: 10px 0 0 0;
+	padding: 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+#busca {
+	border: 2px solid var(--color_main);
+	border-radius: 10px 0 0 10px;
+	border-right: none !important;
+	margin: 0;
+	width: 85%;
+	height: auto;
+	font-size: 20px;
+	padding: 5px;
+}
+.btn_busca {
+	border-radius: 0 10px 10px 0;
+	border: 2px solid var(--color_main);
+	background-color: transparent;
+	border-left: none;
+	padding: 5px 15px;
+	fill: var(--color_main);
+	width: 15%;
+	height: auto;
+	margin: 0;
+}
+.btn_busca:hover {
+	background-color: var(--color_main);
+	fill: white;
+}
+
+.icon_busca {
+	height: 25px;
+}
+.titulo_historico {
+	width: 90%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+}
+.titulo_historico p {
+	margin-left: auto;
+	margin-right: auto;
+}
+.icon_config {
+	margin-right: 5px;
+	height: 30px;
+}
+
+.menu_config {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	width: 100%;
+}
+.menu_config button {
+	width: 30%;
+	border-radius: 10px;
+	text-align: center;
+	padding: 1px;
+}
+.menu_config p {
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: bold;
+}
+.limpar {
+	color: rgba(255, 0, 0, 0.804);
+	border: 2px solid rgba(255, 0, 0, 0.804);
+	background-color: transparent;
+	fill: rgba(255, 0, 0, 0.804);
+}
+.limpar:hover {
+	color: white;
+	background-color: rgba(255, 0, 0, 0.804);
+	fill: white;
+}
+.importar {
+	color: var(--color_main);
+	border: 2px solid var(--color_main);
+	background-color: transparent;
+	fill: var(--color_main);
+}
+.importar:hover {
+	color: white;
+	background-color: var(--color_main);
+	fill: white;
+}
+.exportar {
+	color: var(--color_main);
+	border: 2px solid var(--color_main);
+	background-color: transparent;
+	fill: var(--color_main);
+}
+.exportar:hover {
+	color: white;
+	background-color: var(--color_main);
+	fill: white;
+}
+
+.limpa_contatos {
+	display: none;
+}
+.show_limpa_contatos {
+	display: flex;
+	position: absolute;
+	background-color: white;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px;
+	box-shadow: 0 0 1em black;
+	width: 35%;
+	top: 0;
+	margin-top: 10%;
+}
+.limpa_contatos hr {
+	width: 100%;
+	margin: 0;
+}
+.limpa_contatos p {
+	font-size: 20px;
+	margin: 20px 0;
+}
+.limpa_contatos button {
+	border-radius: 10px;
+	padding: 10px;
+	font-size: 15px;
+	margin: 0 5px;
+	font-weight: bold;
+}
+
+/*Animar botão de configurações*/

@@ -33,23 +33,25 @@
 			</form>
 		</div>
 		<div class="history" id="history"></div>
-		<input type="file" onchange="loadFile(this.files[0])">
+		<input type="file" onchange="loadFile(this.files[0])" accept=".jsl" id="arquivo" name="arquivo" class="arquivo">
 	</div>
 </body>
 </html>
 
 
-<div class="limpa_contatos" id="modal-limpa-contatos">
-	<h2>Limpar Histórico</h2>
-	<hr>
-	<p>Você tem certeza que deseja apagar todos os seus contatos no historico?</p>
-	<div>
-		<button onclick="showLimpaContatos()" class="importar">CANCELAR</button>
-		<button onclick="limpaContatos()" class="limpar">LIMPAR</button>
+<div class="background_modal" id="background-modal" onclick="showLimpaContatos()">
+	<div class="limpa_contatos" id="modal-limpa-contatos" onclick="showLimpaContatos()">
+		<h1>Limpar Histórico</h1>
+		<hr>
+		<p>Você tem certeza que deseja apagar todos os seus contatos no historico?</p>
+		<div>
+			<button onclick="showLimpaContatos()" class="exportar">CANCELAR</button>
+			<button onclick="limpaContatos()" class="limpar">LIMPAR</button>
+		</div>
 	</div>
 </div>
 <!--	
-	***Adicionar responsividade***
+	***Tornar responsivo***
 
 	Botão de (?) no topo do container direito
 		Tela de ajuda [Modal]
